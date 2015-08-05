@@ -34,6 +34,53 @@ Linux中有自旋锁，信号量，互斥量三种锁，互斥量只能用于线
 [进程间用法]:http://blog.csdn.net/ljianhui/article/details/10243617
 [线程间用法]:http://blog.csdn.net/ljianhui/article/details/10813469
 [自旋锁用法]:http://www.cnblogs.com/biyeymyhjob/archive/2012/07/21/2602015.html
+
+线程间同步：
+
+互斥量：
+
+~~~~{c++}
+#include <pthread.h>  
+
+int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *mutexattr);
+
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+
+int pthread_mutex_destroy(pthread_mutex_t *mutex);
+~~~~
+用法：
+使用init初始化一个mutex，然后lock与unlock之间，可以获得这个锁，其他想获得这个锁的线程会挂起。结束的时候destroy。下面是一个控制主线程和子线程交替执行的例子。
+
+~~~~{c++}
+pthread_mutex_t mutex;
+
+int main(){
+    ...
+    res = pthread_mutex_init(&mutex, NULL);
+res = pthread_create(&thread, NULL, thread_func, msg);
+lock(mutex);
+while(condition){
+    ...
+    unlock();
+    sleep(1);
+    lock();
+}
+}
+
+void* thread_func(void *msg){
+lock();
+while(condition){
+    ...
+    unlock();
+    sleep(1);
+    lock();
+}
+}
+
+~~~~
+
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
@@ -42,6 +89,49 @@ Linux中有自旋锁，信号量，互斥量三种锁，互斥量只能用于线
 使用锁除了保证进程（线程）间对变量的互斥访问外，还可以达到进程（线程）同步。</p>
 
 <p>Linux中有自旋锁，信号量，互斥量三种锁，互斥量只能用于线程间，讲解见<a href="http://blog.csdn.net/ljianhui/article/details/10875883">这里</a>，信号量可以用于进程间，也可以用于线程间，<a href="http://blog.csdn.net/ljianhui/article/details/10243617">进程间用法</a>，<a href="http://blog.csdn.net/ljianhui/article/details/10813469">线程间用法</a>。<a href="http://www.cnblogs.com/biyeymyhjob/archive/2012/07/21/2602015.html">自旋锁用法</a>。</p>
+
+<p>线程间同步：</p>
+
+<p>互斥量：</p>
+
+<pre class=" language-c"><code class="++ language-c"><span class="token property">#include <span class="token property">&lt;pthread.h&gt;</span>  </span>
+
+<span class="token keyword">int</span> <span class="token function">pthread_mutex_init<span class="token punctuation">(</span></span>pthread_mutex_t <span class="token operator">*</span>mutex<span class="token punctuation">,</span> <span class="token keyword">const</span> pthread_mutexattr_t <span class="token operator">*</span>mutexattr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">pthread_mutex_lock<span class="token punctuation">(</span></span>pthread_mutex_t <span class="token operator">*</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">pthread_mutex_unlock<span class="token punctuation">(</span></span>pthread_mutex_t <span class="token operator">*</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">pthread_mutex_destroy<span class="token punctuation">(</span></span>pthread_mutex_t <span class="token operator">*</span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>用法：
+使用init初始化一个mutex，然后lock与unlock之间，可以获得这个锁，其他想获得这个锁的线程会挂起。结束的时候destroy。下面是一个控制主线程和子线程交替执行的例子。
+
+<pre class=" language-c"><code class="++ language-c">pthread_mutex_t mutex<span class="token punctuation">;</span>
+
+<span class="token keyword">int</span> <span class="token function">main<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    res <span class="token operator">=</span> <span class="token function">pthread_mutex_init<span class="token punctuation">(</span></span><span class="token operator">&amp;</span>mutex<span class="token punctuation">,</span> NULL<span class="token punctuation">)</span><span class="token punctuation">;</span>
+res <span class="token operator">=</span> <span class="token function">pthread_create<span class="token punctuation">(</span></span><span class="token operator">&amp;</span>thread<span class="token punctuation">,</span> NULL<span class="token punctuation">,</span> thread_func<span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">lock<span class="token punctuation">(</span></span>mutex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token function">unlock<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sleep<span class="token punctuation">(</span></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">lock<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span><span class="token operator">*</span> <span class="token function">thread_func<span class="token punctuation">(</span></span><span class="token keyword">void</span> <span class="token operator">*</span>msg<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token function">lock<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>condition<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token function">unlock<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sleep<span class="token punctuation">(</span></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">lock<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
 <!-- content end -->
 </div>
 <br>
