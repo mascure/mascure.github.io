@@ -25,13 +25,13 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
-代码写的越简洁越容易维护，不能盲目地用空间换时间，在可行的情况下应该用尽可能少的变量。
+代码写的越简洁越容易维护，不能盲目地用空间换时间，在可行的情况下应该用尽可能少的变量。这个问题就没有必要再开两个数组保存对角线方向的占用情况，因为维护这两个数组要花费更多地代码，而且排错很不容易。
 
 回溯和递归两种方法。
 ~~~~{c++}
 int a[100],cnt=0;
 int n=8;
-
+//检查第n个和前n-1个是否没有冲突
 bool check(int a[],int n){
     for (int i=1; i<=n-1; ++i) {
         if (abs(a[n]-a[i])==n-i||a[i]==a[n]) {
@@ -46,28 +46,35 @@ void queen(int N){
     a[1]=0;
     cnt=0;
     while (k>0) {
+        //当前为第k行，放置到下一个
         a[k]=a[k]+1;
+        //依次查找第k行可以放置的位置
         while (a[k]<=N&&!check(a,k)) {
             a[k]++;
         }
+        //找到一个可行的位置
         if (a[k]<=N) {
+            //到达最后一行，说明得到一个解
             if (k==N) {
                 cout<<++cnt<<":"<<endl;
                 for (int i=1; i<=N; ++i) {
                     cout<<i<<","<<a[i]<<endl;
                 }
             }
+            //继续放下一行
             else{
                 k=k+1;
                 a[k]=0;
             }
         }
+        //没有找到可行的位置，回溯到上一行
         else{
             k--;
         }
     }
 }
 void queen2(int k){
+    //得到一个解
     if (k==n+1) {
         cout<<++cnt<<":"<<endl;
         for (int i=1; i<=n; ++i) {
@@ -75,9 +82,11 @@ void queen2(int k){
         }
         return;
     }
+    //依次尝试放第1-n的位置
     for (int i=1; i<=n; ++i) {
         a[k]=i;
         if (check(a, k)) {
+            //放下一行
             queen2(k+1);
         }
     }
@@ -93,14 +102,14 @@ int main()
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p>代码写的越简洁越容易维护，不能盲目地用空间换时间，在可行的情况下应该用尽可能少的变量。</p>
+<p>代码写的越简洁越容易维护，不能盲目地用空间换时间，在可行的情况下应该用尽可能少的变量。这个问题就没有必要再开两个数组保存对角线方向的占用情况，因为维护这两个数组要花费更多地代码，而且排错很不容易。</p>
 
 <p>回溯和递归两种方法。</p>
 
 <pre class=" language-c"><code class="++ language-c"><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> n<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">;</span>
-
-bool <span class="token function">check<span class="token punctuation">(</span></span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> n<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">
+//检查第n个和前n-1个是否没有冲突
+</span>bool <span class="token function">check<span class="token punctuation">(</span></span><span class="token keyword">int</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token number">-1</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">abs<span class="token punctuation">(</span></span>a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">-</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span>n<span class="token operator">-</span>i<span class="token operator">||</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>a<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
@@ -114,39 +123,48 @@ bool <span class="token function">check<span class="token punctuation">(</span><
     a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     cnt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">while</span> <span class="token punctuation">(</span>k&gt;<span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">&lt;=</span>N<span class="token operator">&amp;&amp;</span><span class="token operator">!</span><span class="token function">check<span class="token punctuation">(</span></span>a<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> //当前为第k行，放置到下一个
+</span>        a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+       <span class="token comment" spellcheck="true"> //依次查找第k行可以放置的位置
+</span>        <span class="token keyword">while</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">&lt;=</span>N<span class="token operator">&amp;&amp;</span><span class="token operator">!</span><span class="token function">check<span class="token punctuation">(</span></span>a<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">&lt;=</span>N<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>k<span class="token operator">==</span>N<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> //找到一个可行的位置
+</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">&lt;=</span>N<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true"> //到达最后一行，说明得到一个解
+</span>            <span class="token keyword">if</span> <span class="token punctuation">(</span>k<span class="token operator">==</span>N<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 cout<span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">++</span>cnt<span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token string">":"</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span>endl<span class="token punctuation">;</span>
                 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>N<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     cout<span class="token operator">&lt;</span><span class="token operator">&lt;</span>i<span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token string">","</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span>endl<span class="token punctuation">;</span>
                 <span class="token punctuation">}</span>
             <span class="token punctuation">}</span>
-            <span class="token keyword">else</span><span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true"> //继续放下一行
+</span>            <span class="token keyword">else</span><span class="token punctuation">{</span>
                 k<span class="token operator">=</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
                 a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-        <span class="token keyword">else</span><span class="token punctuation">{</span>
+       <span class="token comment" spellcheck="true"> //没有找到可行的位置，回溯到上一行
+</span>        <span class="token keyword">else</span><span class="token punctuation">{</span>
             k<span class="token operator">--</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">void</span> <span class="token function">queen2<span class="token punctuation">(</span></span><span class="token keyword">int</span> k<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>k<span class="token operator">==</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //得到一个解
+</span>    <span class="token keyword">if</span> <span class="token punctuation">(</span>k<span class="token operator">==</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         cout<span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token operator">++</span>cnt<span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token string">":"</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span>endl<span class="token punctuation">;</span>
         <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             cout<span class="token operator">&lt;</span><span class="token operator">&lt;</span>i<span class="token operator">&lt;</span><span class="token operator">&lt;</span><span class="token string">","</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span><span class="token operator">&lt;</span>endl<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
         <span class="token keyword">return</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true"> //依次尝试放第1-n的位置
+</span>    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         a<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">check<span class="token punctuation">(</span></span>a<span class="token punctuation">,</span> k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token function">queen2<span class="token punctuation">(</span></span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true"> //放下一行
+</span>            <span class="token function">queen2<span class="token punctuation">(</span></span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
