@@ -38,6 +38,7 @@ $ gem install jekyll
 
 #3、初始化博客目录#
 这一步是按照jekyll的目录结构初始化mascure.github.io的文件夹。可以用`jekyll new myblog`先创建一个文件夹，然后把该目录下所有文件拷贝到mascure.github.io。
+
 #4、编辑，预览，发布#
 此时可以看到目录中有_posts，_layouts等文件夹，写博客是在_posts下，可以看到有一篇2015-08-08-welcome-to-jekyll.markdown的文章，可以参照这篇文章来写。按照格式要求写好front matter，然后就是用markdown语法写博文了。文件名也必须严格符合要求的格式。此时可以敲入`jekyll serve`就在本地建立了一个web服务器，浏览器用`http://localhost:4000`就可以访问网站了。这个主要是一个预览的功能，能够在本地就看一下效果，并且每一次更改，jekyll都可以检测到，并生成对应的静态页面（在_sites目录下）。如果不想在本地预览直接发布的话，可以使用`jekyll build`生成静态页面即可。
 
