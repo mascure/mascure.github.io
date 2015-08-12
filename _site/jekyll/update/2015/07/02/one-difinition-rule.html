@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>mascure's blog</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
+  <title>one definition rule</title>
+  <meta name="description" content="昨天碰到一个棘手的问题，编译没有出错，只有几个warning，在运行的时候却挂掉，报段错误。怀疑是空指针问题，但看代码实在不存在空指针的情况。后来不经意改了个变量名，却神奇的可以运行。经过我不懈查找，终于找到原因，这个错误正是前面warning暗示的问题。这个故事再次告诫我们，warning绝对不能不管，要尽一切...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/">
+  <link rel="canonical" href="http://yourdomain.com/jekyll/update/2015/07/02/one-difinition-rule.html">
   <link rel="alternate" type="application/rss+xml" title="mascure's blog" href="http://yourdomain.com/feed.xml" />
 </head>
 
@@ -55,103 +54,22 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">one definition rule</h1>
+    <p class="post-meta">Jul 2, 2015</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Aug 11, 2015</span>
+  <article class="post-content">
+    <p>昨天碰到一个棘手的问题，编译没有出错，只有几个warning，在运行的时候却挂掉，报段错误。怀疑是空指针问题，但看代码实在不存在空指针的情况。后来不经意改了个变量名，却神奇的可以运行。经过我不懈查找，终于找到原因，这个错误正是前面warning暗示的问题。这个故事再次告诫我们，warning绝对不能不管，要尽一切可能排除warning。</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/11/build-my-blog.html">build my blog</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 8, 2015</span>
+<p>这个问题我在stackoverflow上进行了<a href="http://stackoverflow.com/questions/31180474/core-dumped-when-a-function-pointer-is-assigned-with-a-funtion-that-has-the-same">提问</a>，才知道是违反了<a href="https://en.wikipedia.org/wiki/One_Definition_Rule">One Definition Rule</a>。可以得到这样的结论，对于同一个对象（只要名字相同就认为是同一个对象），不允许它有两个定义，无论这两个定义是否有相同的类型。如果这两个定义在同一个文件中，那么编译都不能通过，如果跨越文件，编译器不负责检查，这样在运行时的行为就是不确定的，得到段错误也不足为奇。</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/08/welcome-to-jekyll.html">Welcome to Jekyll!</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 8, 2015</span>
+<p>同时，如果必须要跨越文件使用同一个对象，那么应该以<a href="http://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files-in-c/1433387#1433387">这样</a>的方式使用extern。而如果只是在文件内部使用又想用同一个名字的话，可以给他们加static，这样就保证了这个变量是限定在文件范围内的。</p>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/08/blogtest.html">blogtest</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 7, 2015</span>
 
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/07/eight-queen.html">eight queen</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 6, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/06/allocation-direction-of-stack-in-C++.html">allocation direction of stack in C++</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 5, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/05/download-images-with-python.html">down load images with python</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Aug 4, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/08/04/lock-in-linux.html">lock in linux</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Jul 2, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/07/02/one-difinition-rule.html">one definition rule</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 25, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/05/25/money.html">money</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 22, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/05/22/paxos.html">paxos</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">May 18, 2015</span>
-
-        <h2>
-          <a class="post-link" href="/jekyll/update/2015/05/18/myblog.html">myblog</a>
-        </h2>
-      </li>
-    
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  </article>
 
 </div>
 
