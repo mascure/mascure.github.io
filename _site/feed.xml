@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 Aug 2015 15:21:43 +0800</pubDate>
-    <lastBuildDate>Thu, 13 Aug 2015 15:21:43 +0800</lastBuildDate>
+    <pubDate>Thu, 13 Aug 2015 17:19:10 +0800</pubDate>
+    <lastBuildDate>Thu, 13 Aug 2015 17:19:10 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -19,12 +19,14 @@
 &lt;p&gt;然后就看到disqus，一个第三方的评论管理平台，这才意识到mpalmer的评论其实是存在本地的，那就会有一个很大的优势：速度快。大概了解了下disqus的安装步骤之后，就开始安装。可是第一步就卡住了，disqus.com页面始终刷不出来，包括使用代理。于是可以想到这样的画面，即使安装成功，在现实博客的时候，评论部分始终在加载，标题上的那个圈圈始终在转，这是多么令人不爽。于是决定，找国内的类似平台。&lt;/p&gt;
 
 &lt;p&gt;于是找到了&lt;a href=&quot;duoshuo.com/&quot;&gt;多说&lt;/a&gt;，用法就是把一段代码插入到博客内容的下面。jekyll用的是模板，所以，只需在模板里面加入这段代码就行了。
-代码如下。把头部的三个变量按提示替换掉即可。&lt;/p&gt;
+代码如下。把头部的三个变量按提示替换掉即可(把&lt;code&gt;\&lt;/code&gt;去掉，为什么后面会说)。&lt;/p&gt;
 
 &lt;p&gt;发现国内的果然加载超级快，哈哈。&lt;/p&gt;
 
+&lt;p&gt;_includes/comment.html&lt;/p&gt;
+
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说评论框 start --&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ds-thread&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-thread-key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;请将此处替换成文章在你的站点中的ID&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;请替换成文章的标题&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;请替换成文章的网址&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ds-thread&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-thread-key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{page.id\}\}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{page.title\}\}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{site.url\}\}\{\{page.id\}\}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说评论框 end --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
@@ -39,6 +41,11 @@
 	&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说公共JS代码 end --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;在&lt;code&gt;_layouts/post.html&lt;/code&gt;文件的末尾，加入代码&lt;code&gt;\{\% include comment.html \%\}&lt;/code&gt;。
+（把&lt;code&gt;\&lt;/code&gt;去掉）&lt;/p&gt;
+
+&lt;p&gt;在搭建的过程中，一直有一个疑惑，类似site.url,page.id这样的变量并没有在哪个文件里面设置（用grep查找），却可以在页面里使用，这是为什么。于是猜测这是jekyll定义的变量。jekyll的&lt;a href=&quot;http://jekyllrb.com/docs/variables/&quot;&gt;官方文档&lt;/a&gt;，可以看到有三类变量，global，site，page，在页面中可以用&lt;code&gt;\{\{变量名\}\}&lt;/code&gt;的方法使用，在生成静态页面的时候，jekyll会把所有这样的变量替换为对应的值。所以上文里要加&lt;code&gt;\&lt;/code&gt;以防止被替换掉。&lt;/p&gt;
 
 </description>
         <pubDate>Thu, 13 Aug 2015 23:01:39 +0800</pubDate>

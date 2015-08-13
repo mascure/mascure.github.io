@@ -11,12 +11,14 @@ categories: jekyll update
 然后就看到disqus，一个第三方的评论管理平台，这才意识到mpalmer的评论其实是存在本地的，那就会有一个很大的优势：速度快。大概了解了下disqus的安装步骤之后，就开始安装。可是第一步就卡住了，disqus.com页面始终刷不出来，包括使用代理。于是可以想到这样的画面，即使安装成功，在现实博客的时候，评论部分始终在加载，标题上的那个圈圈始终在转，这是多么令人不爽。于是决定，找国内的类似平台。
 
 于是找到了[多说]，用法就是把一段代码插入到博客内容的下面。jekyll用的是模板，所以，只需在模板里面加入这段代码就行了。
-代码如下。把头部的三个变量按提示替换掉即可。
+代码如下。把头部的三个变量按提示替换掉即可(把`\`去掉，为什么后面会说)。
 
 发现国内的果然加载超级快，哈哈。
+
+_includes/comment.html
 {% highlight html %}
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="请将此处替换成文章在你的站点中的ID" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+	<div class="ds-thread" data-thread-key="\{\{page.id\}\}" data-title="\{\{page.title\}\}" data-url="\{\{site.url\}\}\{\{page.id\}\}"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -33,5 +35,11 @@ var duoshuoQuery = {short_name:"mascure"};
 <!-- 多说公共JS代码 end -->
 {% endhighlight %}
 
+在`_layouts/post.html`文件的末尾，加入代码`\{\% include comment.html \%\}`。
+（把`\`去掉）
+
+在搭建的过程中，一直有一个疑惑，类似site.url,page.id这样的变量并没有在哪个文件里面设置（用grep查找），却可以在页面里使用，这是为什么。于是猜测这是jekyll定义的变量。jekyll的[官方文档]，可以看到有三类变量，global，site，page，在页面中可以用`\{\{变量名\}\}`的方法使用，在生成静态页面的时候，jekyll会把所有这样的变量替换为对应的值。所以上文里要加`\`以防止被替换掉。
+
 [这个]: https://github.com/mpalmer/jekyll-static-comments/
 [多说]: duoshuo.com/
+[官方文档]: http://jekyllrb.com/docs/variables/
