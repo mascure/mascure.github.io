@@ -6,9 +6,27 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 Aug 2015 19:31:01 +0800</pubDate>
-    <lastBuildDate>Thu, 13 Aug 2015 19:31:01 +0800</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2015 23:42:41 +0800</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2015 23:42:41 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>静心，多行善事</title>
+        <description>&lt;p&gt;这几天心里颇不宁静。起伏太大。本来就一直躁动不安的我，没想到落得今天如此地步，也是我自作孽，不可活。
+今天听到mjf的结果，虽然当时不免失落，但现在心里反倒非常宁静了，任何结果我都可以接受了，任何最坏的结果。想想这几个月以来，被绑架的头脑，因为太过年轻，太过偏执，太过自我，是做了多少傻事，最终居然引得老板对我做出最决绝的决定。&lt;/p&gt;
+
+&lt;p&gt;要慢慢让自己平静下来，不管遇到什么事，都要保持冷静，保持一颗平常心。还要多做善事，帮助别人。也许我会慢慢同情那些在地铁里乞讨的人，给他们一点施舍。邻居不在家就帮他收一下快递。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 25 Aug 2015 07:17:21 +0800</pubDate>
+        <link>http://localhost:4000/jekyll/update/2015/08/25/be-calm.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2015/08/25/be-calm.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>为博客添加评论</title>
@@ -603,26 +621,6 @@ in my git&lt;/p&gt;
         <pubDate>Tue, 04 Aug 2015 21:17:58 +0800</pubDate>
         <link>http://localhost:4000/jekyll/update/2015/08/04/lock-in-linux.html</link>
         <guid isPermaLink="true">http://localhost:4000/jekyll/update/2015/08/04/lock-in-linux.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>one definition rule</title>
-        <description>&lt;p&gt;昨天碰到一个棘手的问题，编译没有出错，只有几个warning，在运行的时候却挂掉，报段错误。怀疑是空指针问题，但看代码实在不存在空指针的情况。后来不经意改了个变量名，却神奇的可以运行。经过我不懈查找，终于找到原因，这个错误正是前面warning暗示的问题。这个故事再次告诫我们，warning绝对不能不管，要尽一切可能排除warning。&lt;/p&gt;
-
-&lt;p&gt;这个问题我在stackoverflow上进行了&lt;a href=&quot;http://stackoverflow.com/questions/31180474/core-dumped-when-a-function-pointer-is-assigned-with-a-funtion-that-has-the-same&quot;&gt;提问&lt;/a&gt;，才知道是违反了&lt;a href=&quot;https://en.wikipedia.org/wiki/One_Definition_Rule&quot;&gt;One Definition Rule&lt;/a&gt;。可以得到这样的结论，对于同一个对象（只要名字相同就认为是同一个对象），不允许它有两个定义，无论这两个定义是否有相同的类型。如果这两个定义在同一个文件中，那么编译都不能通过，如果跨越文件，编译器不负责检查，这样在运行时的行为就是不确定的，得到段错误也不足为奇。&lt;/p&gt;
-
-&lt;p&gt;同时，如果必须要跨越文件使用同一个对象，那么应该以&lt;a href=&quot;http://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files-in-c/1433387#1433387&quot;&gt;这样&lt;/a&gt;的方式使用extern。而如果只是在文件内部使用又想用同一个名字的话，可以给他们加static，这样就保证了这个变量是限定在文件范围内的。&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 02 Jul 2015 21:17:58 +0800</pubDate>
-        <link>http://localhost:4000/jekyll/update/2015/07/02/one-difinition-rule.html</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2015/07/02/one-difinition-rule.html</guid>
         
         
         <category>jekyll</category>
