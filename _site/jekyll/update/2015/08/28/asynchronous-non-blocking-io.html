@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>myblog</title>
-  <meta name="description" content="从新域名访问。mascure.info">
+  <title>异步非阻塞IO</title>
+  <meta name="description" content="最近在看nginx。nginx以其卓越的性能在发布后广受欢迎，而它性能之所以高，是因为采用了事件驱动模型来达到异步非阻塞IO，简单说来就是发送方每个请求在发出后立即返回（异步），接收方在处理这个请求时（进行IO操作），也立即返回（非阻塞），等到IO操作完成，接收方发消息给发送方，并把内容发送给发送方。使用非阻塞的...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/05/18/myblog.html">
+  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/08/28/asynchronous-non-blocking-io.html">
   <link rel="alternate" type="application/rss+xml" title="mascure's blog" href="http://mascure.info/feed.xml" />
 </head>
 
@@ -57,36 +57,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">myblog</h1>
-    <p class="post-meta">May 18, 2015</p>
+    <h1 class="post-title">异步非阻塞IO</h1>
+    <p class="post-meta">Aug 28, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>从新域名访问。mascure.info</p>
+    <p>最近在看nginx。nginx以其卓越的性能在发布后广受欢迎，而它性能之所以高，是因为采用了
+事件驱动模型来达到异步非阻塞IO，简单说来就是发送方每个请求在发出后立即返回（异步），接收方在处理这个请求时（进行IO操作），也立即返回（非阻塞），等到IO操作完成，接收方发消息给发送方，并把内容发送给发送方。使用非阻塞的网络IO，特别适合于需要保持长连接的场景，如<a href="https://en.wikipedia.org/wiki/Push_technology#Long_polling">long polling</a>,<a href="https://en.wikipedia.org/wiki/WebSocket">WebSockets</a>。</p>
 
-<p>这是我写的第一篇测试博客</p>
+<p>阻塞：当一个函数等待一些事情发生时，会阻塞掉，原因包括网络IO，磁盘IO，mutexes，此时进程挂起。</p>
 
-<p>~~~~{python}
-print ‘hello world’
-~~~~</p>
+<p>一些资料：
+http://www.zhihu.com/question/19732473
+http://blog.csdn.net/historyasamirror/article/details/5778378</p>
 
-<p>~~~~{python}
-print ‘hello world’
-~~~~
-~~~~{java}
-system.out.println(“hello world”);
-~~~~
-    afsdf
-    asdfasdf
-    sdafadsf</p>
-
-<p><code>cout&lt;&lt;"hello world&lt;&lt;endl;"</code></p>
-
-<p><img src="http://img0.bdstatic.com/img/image/4a75a05f8041bf84df4a4933667824811426747915.jpg" alt="Foo" /></p>
 
   </article>
   <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/jekyll/update/2015/05/18/myblog" data-title="myblog" data-url="http://mascure.info/jekyll/update/2015/05/18/myblog.html"></div>
+	<div class="ds-thread" data-thread-key="/jekyll/update/2015/08/28/asynchronous-non-blocking-io" data-title="异步非阻塞IO" data-url="http://mascure.info/jekyll/update/2015/08/28/asynchronous-non-blocking-io.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
