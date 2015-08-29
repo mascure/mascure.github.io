@@ -29,7 +29,7 @@ categories: jekyll update
 
 一些资料:        
 
-<http://www.zhihu.com/question/19732473>
+<http://www.zhihu.com/question/19732473>  
 <http://blog.csdn.net/historyasamirror/article/details/5778378>
 
 [这个解释]: http://stackoverflow.com/questions/2625493/asynchronous-vs-non-blocking
