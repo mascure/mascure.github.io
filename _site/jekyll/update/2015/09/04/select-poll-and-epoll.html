@@ -150,9 +150,10 @@ timeout: 等待 I/O 事件发生的超时值；<br />
 </ol>
 
 <h2 id="section">其他</h2>
-<p>这三种方式只能用于网络套接字的情形，不能用于regular file。对regular file的open，read之类的操作都是一定会导致阻塞。要想达到非阻塞，则需要用aio。</p>
+<p>这三种方式只能用于网络套接字的情形，不能用于regular file。对regular file的open，read之类的操作都是一定会导致阻塞。要想达到非阻塞，则需要用<a href="http://www.ibm.com/developerworks/cn/linux/l-async/">aio</a>。这个有时间再看吧。</p>
 
 <p>regular file:纯文本或二进制文件。其他，如pipe，socket，directory，symbolic link不是regular file。</p>
+
 
   </article>
   <!-- 多说评论框 start -->

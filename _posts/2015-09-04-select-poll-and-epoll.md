@@ -88,6 +88,8 @@ epoll的优点之处体现在以下几个方面：
 3. mmap加速内核与用户空间的信息传递。epoll是通过内核于用户空间mmap同一块内存，避免了无畏的内存拷贝。  
 
 ##其他
-这三种方式只能用于网络套接字的情形，不能用于regular file。对regular file的open，read之类的操作都是一定会导致阻塞。要想达到非阻塞，则需要用aio。
+这三种方式只能用于网络套接字的情形，不能用于regular file。对regular file的open，read之类的操作都是一定会导致阻塞。要想达到非阻塞，则需要用[aio]。这个有时间再看吧。
 
 regular file:纯文本或二进制文件。其他，如pipe，socket，directory，symbolic link不是regular file。
+
+[aio]: http://www.ibm.com/developerworks/cn/linux/l-async/
