@@ -6,9 +6,32 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Sep 2015 11:01:25 +0800</pubDate>
-    <lastBuildDate>Sat, 19 Sep 2015 11:01:25 +0800</lastBuildDate>
+    <pubDate>Wed, 07 Oct 2015 22:52:30 +0800</pubDate>
+    <lastBuildDate>Wed, 07 Oct 2015 22:52:30 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>10.7</title>
+        <description>&lt;p&gt;国庆回来了。&lt;/p&gt;
+
+&lt;p&gt;本想着最近遭遇了大的变故，回家去父母那里，让他们抚慰一下我受伤的心灵。可是结果不如我意。&lt;/p&gt;
+
+&lt;p&gt;放假前去见了一下梦雯。我试图用一种简单的方式去描述我最近的遭遇，没有刻意去强调什么。可是她真的就这么轻描淡写的对我的遭遇带过了。我是有点失望的。连梦雯这样的好友都没有察觉到我心灵上遭遇的巨大创伤。也许是她没有亲身体会过被别人笑里藏刀地在后背狠狠的插一刀是什么样的感受，没有体会过还没来得及积攒经验就要面临重新找工作的境遇。&lt;/p&gt;
+
+&lt;p&gt;父母久居家中，对外面的世界，尤其是跟我工作相关的，互联网，软件知之甚少。他们不知道我的真实工作环境是什么样的。即使他们懂得人情冷暖，世态炎凉，但畏于自身的知识有限，他们以为自己不知道我遭遇的每一个细节，因而就不做深入体察，仅凭我的说辞罢了。也许这是事实。但连父母也不能去心疼一下自己孩子的痛苦，我是有点失望的。&lt;/p&gt;
+
+&lt;p&gt;前路还是要继续走的，还是少向后看吧。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 08 Oct 2015 06:33:15 +0800</pubDate>
+        <link>http://mascure.info/jekyll/update/2015/10/08/10.7.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/10/08/10.7.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>Ningx 中的时间管理</title>
@@ -736,33 +759,6 @@ timeout: 等待 I/O 事件发生的超时值；&lt;br /&gt;
         <pubDate>Thu, 13 Aug 2015 23:01:39 +0800</pubDate>
         <link>http://mascure.info/jekyll/update/2015/08/13/add-comment-to-my-blog.html</link>
         <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/13/add-comment-to-my-blog.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>insert time in vim</title>
-        <description>&lt;p&gt;在vim中快速插入当前系统时间，可以通过修改vim的配置文件，将F5映射到打印系统时间。&lt;/p&gt;
-
-&lt;p&gt;这就涉及到修改vim的配置文件。vimrc是vim最主要的配置文件，它有两个版本，全局版本（global）和用户版本（personal）。全局vimrc文件在Vim的安装目录中，我的电脑是Mac，所以其路径是
-/usr/share/vim/vimrc，用户版本的vimrc文件在当前用户的主目录下，主目录的位置依赖于操作系统。Mac下的用户vimrc文件路径为：
-/Users/用户名/.vimrc。但是Mac下默认是没有用户vimrc的，所以需要自己创建一个。用户版的vimrc会覆盖全局版。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:nnoremap &amp;lt;F5&amp;gt; &quot;=strftime(&quot;%F&quot;)&amp;lt;CR&amp;gt;gP
-:inoremap &amp;lt;F5&amp;gt; &amp;lt;C-R&amp;gt;=strftime(&quot;%F&quot;)&amp;lt;CR&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;将上面两行加入$HOME/.vimrc中，就可以在一般模式和编辑模式下用快捷键F5，插入当前系统时间了。这里设置的时间格式是xxxx-xx-xx。可以按照需要修改为自己想要的模式。比如修改为&lt;code&gt;YYYY-MM-DD HH:MM:SS&lt;/code&gt;，可以将%F替换为&lt;code&gt;\%Y-\%m-\%d \%H:\%M:\%S&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;至此，大功告成。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 13 Aug 2015 04:32:47 +0800</pubDate>
-        <link>http://mascure.info/jekyll/update/2015/08/13/insert-time-in-vim.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/13/insert-time-in-vim.html</guid>
         
         
         <category>jekyll</category>
