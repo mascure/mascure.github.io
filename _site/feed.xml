@@ -6,9 +6,24 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Oct 2015 22:52:30 +0800</pubDate>
-    <lastBuildDate>Wed, 07 Oct 2015 22:52:30 +0800</lastBuildDate>
+    <pubDate>Sat, 31 Oct 2015 21:02:47 +0800</pubDate>
+    <lastBuildDate>Sat, 31 Oct 2015 21:02:47 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>buddhism</title>
+        <description>&lt;p&gt;汝若欲知心要，但一切善恶都莫思量，自然得入，清净心体，湛然常寄，妙用恒沙。这应该说的就是冥想吧。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Nov 2015 04:57:01 +0800</pubDate>
+        <link>http://mascure.info/jekyll/update/2015/11/01/buddhism.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/11/01/buddhism.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>10.7</title>
@@ -710,55 +725,6 @@ timeout: 等待 I/O 事件发生的超时值；&lt;br /&gt;
         <pubDate>Tue, 18 Aug 2015 06:26:59 +0800</pubDate>
         <link>http://mascure.info/jekyll/update/2015/08/18/8.17.html</link>
         <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/18/8.17.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>为博客添加评论</title>
-        <description>&lt;p&gt;去国外绕了一圈，还是回来了。&lt;/p&gt;
-
-&lt;p&gt;最开始搜索jekyll comment，搜到的是&lt;a href=&quot;https://github.com/mpalmer/jekyll-static-comments/&quot;&gt;这个&lt;/a&gt;，可是在按照步骤配置好以后，页面上的评论部分是显示出来了，但点击评论时会提示不允许使用post方法。这让我很诧异，难道jekyll不允许使用post方法，还是comment部分在接收时出了问题，去网上找解决办法，因为这是mpalmer在git上的一个项目，受众比较小，没有搜到有价值的回答。自己也没心情去研究它的代码。于是只好换别的评论系统。&lt;/p&gt;
-
-&lt;p&gt;然后就看到disqus，一个第三方的评论管理平台，这才意识到mpalmer的评论其实是存在本地的，那就会有一个很大的优势：速度快。大概了解了下disqus的安装步骤之后，就开始安装。可是第一步就卡住了，disqus.com页面始终刷不出来，包括使用代理。于是可以想到这样的画面，即使安装成功，在现实博客的时候，评论部分始终在加载，标题上的那个圈圈始终在转，这是多么令人不爽。于是决定，找国内的类似平台。&lt;/p&gt;
-
-&lt;p&gt;于是找到了&lt;a href=&quot;duoshuo.com/&quot;&gt;多说&lt;/a&gt;，用法就是把一段代码插入到博客内容的下面。jekyll用的是模板，所以，只需在模板里面加入这段代码就行了。
-代码如下。把头部的三个变量按提示替换掉即可(把&lt;code&gt;\&lt;/code&gt;去掉，为什么后面会说)。&lt;/p&gt;
-
-&lt;p&gt;发现国内的果然加载超级快，哈哈。&lt;/p&gt;
-
-&lt;p&gt;_includes/comment.html&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说评论框 start --&amp;gt;&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ds-thread&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-thread-key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{page.id\}\}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{page.title\}\}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{site.url\}\}\{\{page.id\}\}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说评论框 end --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;duoshuoQuery&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;short_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;mascure&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;text/javascript&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http:&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;//static.duoshuo.com/embed.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;charset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;UTF-8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;head&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
-		 &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;body&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
-	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说公共JS代码 end --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;在&lt;code&gt;_layouts/post.html&lt;/code&gt;文件的末尾，加入代码&lt;code&gt;\{\% include comment.html \%\}&lt;/code&gt;。
-（把&lt;code&gt;\&lt;/code&gt;去掉）&lt;/p&gt;
-
-&lt;p&gt;在搭建的过程中，一直有一个疑惑，类似site.url,page.id这样的变量并没有在哪个文件里面设置（用grep查找），却可以在页面里使用，这是为什么。于是猜测这是jekyll定义的变量。jekyll的&lt;a href=&quot;http://jekyllrb.com/docs/variables/&quot;&gt;官方文档&lt;/a&gt;，可以看到有三类变量，global，site，page，在页面中可以用&lt;code&gt;\{\{变量名\}\}&lt;/code&gt;的方法使用，在生成静态页面的时候，jekyll会把所有这样的变量替换为对应的值。所以上文里要加&lt;code&gt;\&lt;/code&gt;以防止被替换掉。&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 13 Aug 2015 23:01:39 +0800</pubDate>
-        <link>http://mascure.info/jekyll/update/2015/08/13/add-comment-to-my-blog.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/13/add-comment-to-my-blog.html</guid>
         
         
         <category>jekyll</category>
