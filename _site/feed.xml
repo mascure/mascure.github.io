@@ -6,9 +6,30 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 31 Oct 2015 21:02:47 +0800</pubDate>
-    <lastBuildDate>Sat, 31 Oct 2015 21:02:47 +0800</lastBuildDate>
+    <pubDate>Thu, 17 Dec 2015 00:02:35 +0800</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2015 00:02:35 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>12.16</title>
+        <description>&lt;p&gt;这两天头脑格外清醒，平常可以控制好自己的情绪和言辞，能做到这一点，很好。&lt;/p&gt;
+
+&lt;p&gt;从毕业以后就一直一个人住了，到现在已经大半年了。一个人得时候总能静下来思考一下事情，反思一下。&lt;/p&gt;
+
+&lt;p&gt;愈发觉得研究生3年，自己思想松懈，不求进取，总以自己名校研究生的身份自居，自学英语敷衍了事，在慕锐心中不平衡的思想占主流，就没了专心做事的心思。工作之外一味安逸，贪图享乐，现在想想真真是一事无成。&lt;/p&gt;
+
+&lt;p&gt;追女生的事情暂且放一放吧，不拼搏一下，岂不是枉费了大好青春时光。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 17 Dec 2015 07:42:16 +0800</pubDate>
+        <link>http://mascure.info/jekyll/keepthinking/2015/12/17/12.16.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/keepthinking/2015/12/17/12.16.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>keepthinking</category>
+        
+      </item>
     
       <item>
         <title>buddhism</title>
@@ -706,25 +727,6 @@ timeout: 等待 I/O 事件发生的超时值；&lt;br /&gt;
         <pubDate>Tue, 25 Aug 2015 07:17:21 +0800</pubDate>
         <link>http://mascure.info/jekyll/update/2015/08/25/be-calm.html</link>
         <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/25/be-calm.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>8.17</title>
-        <description>&lt;p&gt;bd从一面到今天正好两周，最终还是在三面挂在了‘高并发’经验不足上。可是这就是个悖论啊，从没有搞过的东西怎么会有经验，即使再聪明也不可能现场给你画饼。有高并发经验的估计也就屈指可数的几个网站吧。&lt;/p&gt;
-
-&lt;p&gt;李笑来说，没有经验导致没法得到工作，进而没有工作经验，看起来就永远无法找到工作。摆脱的方法是：给我什么我就用好什么，积累到一定程度再去换能换的东西。但我现在也不能什么工作都接，要跳起来摘苹果。&lt;/p&gt;
-
-&lt;p&gt;眼下之计，落户貌似不再有公司什么事了，甚至8月底之前就可能会办好。如此的话，就没必要再去IBM的测试了，反正去那里纯粹就是为了保住户口。而我静下心来，好好找工作，最多一个月，也可以找到不错的了吧。怎么算不错？看心里面喜不喜欢吧。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 18 Aug 2015 06:26:59 +0800</pubDate>
-        <link>http://mascure.info/jekyll/update/2015/08/18/8.17.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/18/8.17.html</guid>
         
         
         <category>jekyll</category>
