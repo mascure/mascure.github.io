@@ -6,9 +6,27 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2015 00:02:35 +0800</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2015 00:02:35 +0800</lastBuildDate>
+    <pubDate>Sun, 10 Jan 2016 15:41:11 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Jan 2016 15:41:11 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>https</title>
+        <description>&lt;p&gt;https&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/https_info_on_wiki.png&quot; alt=&quot;https_info_on_wiki&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 25 Dec 2015 07:07:20 +0800</pubDate>
+        <link>http://mascure.info/jekyll/update/2015/12/25/CDN-https.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/12/25/CDN-https.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>12.16</title>
@@ -709,24 +727,6 @@ timeout: 等待 I/O 事件发生的超时值；&lt;br /&gt;
         <pubDate>Fri, 28 Aug 2015 07:24:25 +0800</pubDate>
         <link>http://mascure.info/jekyll/update/2015/08/28/asynchronous-non-blocking-io.html</link>
         <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/28/asynchronous-non-blocking-io.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>静心，多行善事</title>
-        <description>&lt;p&gt;这几天心里颇不宁静。起伏太大。本来就一直躁动不安的我，没想到落得今天如此地步，也是我自作孽，不可活。
-今天听到mjf的结果，虽然当时不免失落，但现在心里反倒非常宁静了，任何结果我都可以接受了，任何最坏的结果。想想这几个月以来，被绑架的头脑，因为太过年轻，太过偏执，太过自我，是做了多少傻事，最终居然引得老板对我做出最决绝的决定。&lt;/p&gt;
-
-&lt;p&gt;要慢慢让自己平静下来，不管遇到什么事，都要保持冷静，保持一颗平常心。还要多做善事，帮助别人。也许我会慢慢同情那些在地铁里乞讨的人，给他们一点施舍。邻居不在家就帮他收一下快递。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 25 Aug 2015 07:17:21 +0800</pubDate>
-        <link>http://mascure.info/jekyll/update/2015/08/25/be-calm.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/25/be-calm.html</guid>
         
         
         <category>jekyll</category>
