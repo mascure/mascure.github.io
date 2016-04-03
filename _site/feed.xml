@@ -6,9 +6,65 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jan 2016 15:41:11 +0800</pubDate>
-    <lastBuildDate>Sun, 10 Jan 2016 15:41:11 +0800</lastBuildDate>
+    <pubDate>Sun, 03 Apr 2016 23:32:27 +0800</pubDate>
+    <lastBuildDate>Sun, 03 Apr 2016 23:32:27 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>设计模式-代理模式</title>
+        <description>&lt;p&gt;它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：&lt;br /&gt;
+1、远程代理控制访问远程对象；&lt;br /&gt;
+2、虚拟代理控制访问创建开销大的资源；&lt;br /&gt;
+3、保护代理基于权限控制对资源的访问。&lt;/p&gt;
+
+&lt;p&gt;实现远程代理，最原始的方法是使用jdk内置的RMI工具，可以在一个JVM中调用另一个JVM中的对象的方法。&lt;/p&gt;
+
+&lt;p&gt;远程代理是从设计模式的角度描述这个过程，但它更广为人知的名称叫做&lt;远程过程调用&gt;（RPC）。RPC简单来说就是解决这样一件事情，在机器A上想调用某个服务（对象）的某个方法，但这个服务本身是在机器B上（或者机器A的另外一个进程里），所以A对该服务的调用，需要转发到B的对应服务上，转发通常是：序列化-网络传输-反序列化，B调用完之后，将结果以同样的通道传给A，从而完成一次调用。&lt;/远程过程调用&gt;&lt;/p&gt;
+
+&lt;p&gt;特地看了一下点评的pigeon，它的体系结构如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pigeon.png&quot; alt=&quot;pigeon&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可以看到一次调用经过了类似网络7层结构栈的从最顶层到最底层，再从最底层到最顶层的路径。pigeon做了代理的创建，路由，线程管理等，在网络通信层使用了netty。netty是一个高性能，异步事件驱动的NIO框架，由于性能高，获得广泛应用。参见&lt;a href=&quot;http://www.infoq.com/cn/articles/netty-high-performance/&quot;&gt;Netty系列之Netty高性能之道&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;而RMI的所有调用均是同步阻塞式的。&lt;/p&gt;
+
+&lt;p&gt;相比RMI，pigeon做到了高性能和简单易用。&lt;/p&gt;
+
+&lt;p&gt;有必要研究一下netty。&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 04 Apr 2016 04:52:56 +0800</pubDate>
+        <link>http://mascure.info/jekyll/update/2016/04/04/design-patterns.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/update/2016/04/04/design-patterns.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>CDN</title>
+        <description>&lt;p&gt;看完了《CDN技术详解》这本书，是电信研究院出的，总体上对CDN技术有了一个把握。CDN技术存在的根本原因是web的极大繁荣，对服务提供能力提出的要求。并且在web服务中，存在大量的静态资源。如果web上的资源全部是动态的，也就不会存在CDN了。&lt;/p&gt;
+
+&lt;p&gt;这些静态资源包括图片，js，CSS等。这些资源所占的字节数较大，如果能把这些资源放在更靠近用户的位置，那么将减少网络传输量和服务器负载。这也就是CDN所要做的事情。&lt;/p&gt;
+
+&lt;p&gt;当前CDN主要由网络运营商提供，如联通，电信，移动，以及租用运营商设备的其他公司提供，如蓝迅。&lt;/p&gt;
+
+&lt;p&gt;目前CDN的实现主要是嵌套在DNS解析过程中的，其中通过CNAME方式实现是目前业界使用最多的方式。&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 Jan 2016 00:48:10 +0800</pubDate>
+        <link>http://mascure.info/jekyll/update/2016/01/18/CDN-notes.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/update/2016/01/18/CDN-notes.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
     
       <item>
         <title>https</title>
@@ -29,56 +85,12 @@
       </item>
     
       <item>
-        <title>12.16</title>
-        <description>&lt;p&gt;这两天头脑格外清醒，平常可以控制好自己的情绪和言辞，能做到这一点，很好。&lt;/p&gt;
-
-&lt;p&gt;从毕业以后就一直一个人住了，到现在已经大半年了。一个人得时候总能静下来思考一下事情，反思一下。&lt;/p&gt;
-
-&lt;p&gt;愈发觉得研究生3年，自己思想松懈，不求进取，总以自己名校研究生的身份自居，自学英语敷衍了事，在慕锐心中不平衡的思想占主流，就没了专心做事的心思。工作之外一味安逸，贪图享乐，现在想想真真是一事无成。&lt;/p&gt;
-
-&lt;p&gt;追女生的事情暂且放一放吧，不拼搏一下，岂不是枉费了大好青春时光。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 17 Dec 2015 07:42:16 +0800</pubDate>
-        <link>http://mascure.info/jekyll/keepthinking/2015/12/17/12.16.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/keepthinking/2015/12/17/12.16.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>keepthinking</category>
-        
-      </item>
-    
-      <item>
         <title>buddhism</title>
         <description>&lt;p&gt;汝若欲知心要，但一切善恶都莫思量，自然得入，清净心体，湛然常寄，妙用恒沙。这应该说的就是冥想吧。&lt;/p&gt;
 </description>
         <pubDate>Sun, 01 Nov 2015 04:57:01 +0800</pubDate>
         <link>http://mascure.info/jekyll/update/2015/11/01/buddhism.html</link>
         <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/11/01/buddhism.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
-        <title>10.7</title>
-        <description>&lt;p&gt;国庆回来了。&lt;/p&gt;
-
-&lt;p&gt;本想着最近遭遇了大的变故，回家去父母那里，让他们抚慰一下我受伤的心灵。可是结果不如我意。&lt;/p&gt;
-
-&lt;p&gt;放假前去见了一下梦雯。我试图用一种简单的方式去描述我最近的遭遇，没有刻意去强调什么。可是她真的就这么轻描淡写的对我的遭遇带过了。我是有点失望的。连梦雯这样的好友都没有察觉到我心灵上遭遇的巨大创伤。也许是她没有亲身体会过被别人笑里藏刀地在后背狠狠的插一刀是什么样的感受，没有体会过还没来得及积攒经验就要面临重新找工作的境遇。&lt;/p&gt;
-
-&lt;p&gt;父母久居家中，对外面的世界，尤其是跟我工作相关的，互联网，软件知之甚少。他们不知道我的真实工作环境是什么样的。即使他们懂得人情冷暖，世态炎凉，但畏于自身的知识有限，他们以为自己不知道我遭遇的每一个细节，因而就不做深入体察，仅凭我的说辞罢了。也许这是事实。但连父母也不能去心疼一下自己孩子的痛苦，我是有点失望的。&lt;/p&gt;
-
-&lt;p&gt;前路还是要继续走的，还是少向后看吧。&lt;/p&gt;
-</description>
-        <pubDate>Thu, 08 Oct 2015 06:33:15 +0800</pubDate>
-        <link>http://mascure.info/jekyll/update/2015/10/08/10.7.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/10/08/10.7.html</guid>
         
         
         <category>jekyll</category>
@@ -569,25 +581,6 @@ sendmsg        增加标记，套接口地址与长度，分散写入以及附�
       </item>
     
       <item>
-        <title>9.7</title>
-        <description>&lt;p&gt;最近一段时间离开了社交圈，其实也不算离开，仅仅是不再在朋友圈，群点赞，评论，和发消息，看还是会看的。但仅仅是这些，感觉我已经可以非常理性的看待社交对我的一些影响了。&lt;/p&gt;
-
-&lt;p&gt;当我参与其中时，如果我进行了点赞或评论，无形之中我就会期待对我的反馈，比如更多地人点赞就会通知我，评论了就会期待主人给我回复。可实际上这样的互动没有什么真正的价值，顶多算是一种时间上的消遣。如果我大量的点赞和评论，就会花大量的精力去期待回馈。这实际上是一种消耗，对精力的消耗。现在想想，我的精力真的是太宝贵了。可以适当的放松，但一定要保留足够的精力来做最主要的事情。我这个人很较真，狠敏感，较真就会把许多精力放在无谓的争论上，敏感则会导致社交恐惧症，与专车司机的简单谈话，与面试时前台人员的几句沟通，与外卖配送的几句话，与银行柜员的话，这种简单的场景我有时候都会事先想好该说什么，怎么说。在我离职之前，我确实是这样的。但最近一直在家静养，也逐渐变得专注，开始有意识地不去想一些会干扰我思维的事，而是冷静，清晰的思考我想要什么。简单的社交谈话也变得更加从容，随机应变，更多地认真倾听别人在说什么。&lt;/p&gt;
-
-&lt;p&gt;所以，如何认真地保护好我有限的精力，这需要我养成一定的习惯和思维方式，从而达到潜意识的，自觉的去保护我的精力不被分散。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 08 Sep 2015 06:03:50 +0800</pubDate>
-        <link>http://mascure.info/jekyll/update/2015/09/08/9.7.html</link>
-        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/09/08/9.7.html</guid>
-        
-        
-        <category>jekyll</category>
-        
-        <category>update</category>
-        
-      </item>
-    
-      <item>
         <title>select,poll and epoll in nginx</title>
         <description>&lt;p&gt;这三种机制本质上均是多路IO在时间上的复用。I/O多路复用就通过一种机制，可以监视多个描述符，一旦某个描述符就绪（一般是读就绪或者写就绪），能够通知程序进行相应的读写操作。这种方式比简单的依次在每个描述符上进行阻塞式的等待要高效。但select，poll，epoll本质上都是同步I/O，因为他们都需要在读写事件就绪后自己负责进行读写，也就是说这个读写过程是阻塞的，而异步I/O则无需自己负责进行读写。&lt;/p&gt;
 
@@ -727,6 +720,55 @@ timeout: 等待 I/O 事件发生的超时值；&lt;br /&gt;
         <pubDate>Fri, 28 Aug 2015 07:24:25 +0800</pubDate>
         <link>http://mascure.info/jekyll/update/2015/08/28/asynchronous-non-blocking-io.html</link>
         <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/28/asynchronous-non-blocking-io.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>为博客添加评论</title>
+        <description>&lt;p&gt;去国外绕了一圈，还是回来了。&lt;/p&gt;
+
+&lt;p&gt;最开始搜索jekyll comment，搜到的是&lt;a href=&quot;https://github.com/mpalmer/jekyll-static-comments/&quot;&gt;这个&lt;/a&gt;，可是在按照步骤配置好以后，页面上的评论部分是显示出来了，但点击评论时会提示不允许使用post方法。这让我很诧异，难道jekyll不允许使用post方法，还是comment部分在接收时出了问题，去网上找解决办法，因为这是mpalmer在git上的一个项目，受众比较小，没有搜到有价值的回答。自己也没心情去研究它的代码。于是只好换别的评论系统。&lt;/p&gt;
+
+&lt;p&gt;然后就看到disqus，一个第三方的评论管理平台，这才意识到mpalmer的评论其实是存在本地的，那就会有一个很大的优势：速度快。大概了解了下disqus的安装步骤之后，就开始安装。可是第一步就卡住了，disqus.com页面始终刷不出来，包括使用代理。于是可以想到这样的画面，即使安装成功，在现实博客的时候，评论部分始终在加载，标题上的那个圈圈始终在转，这是多么令人不爽。于是决定，找国内的类似平台。&lt;/p&gt;
+
+&lt;p&gt;于是找到了&lt;a href=&quot;duoshuo.com/&quot;&gt;多说&lt;/a&gt;，用法就是把一段代码插入到博客内容的下面。jekyll用的是模板，所以，只需在模板里面加入这段代码就行了。
+代码如下。把头部的三个变量按提示替换掉即可(把&lt;code&gt;\&lt;/code&gt;去掉，为什么后面会说)。&lt;/p&gt;
+
+&lt;p&gt;发现国内的果然加载超级快，哈哈。&lt;/p&gt;
+
+&lt;p&gt;_includes/comment.html&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说评论框 start --&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;ds-thread&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-thread-key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{page.id\}\}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{page.title\}\}&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-url=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;\{\{site.url\}\}\{\{page.id\}\}&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说评论框 end --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;duoshuoQuery&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;short_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;mascure&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;script&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;text/javascript&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https:&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;http:&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;//static.duoshuo.com/embed.js&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;charset&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;UTF-8&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;head&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; 
+		 &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;body&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;})();&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 多说公共JS代码 end --&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;在&lt;code&gt;_layouts/post.html&lt;/code&gt;文件的末尾，加入代码&lt;code&gt;\{\% include comment.html \%\}&lt;/code&gt;。
+（把&lt;code&gt;\&lt;/code&gt;去掉）&lt;/p&gt;
+
+&lt;p&gt;在搭建的过程中，一直有一个疑惑，类似site.url,page.id这样的变量并没有在哪个文件里面设置（用grep查找），却可以在页面里使用，这是为什么。于是猜测这是jekyll定义的变量。jekyll的&lt;a href=&quot;http://jekyllrb.com/docs/variables/&quot;&gt;官方文档&lt;/a&gt;，可以看到有三类变量，global，site，page，在页面中可以用&lt;code&gt;\{\{变量名\}\}&lt;/code&gt;的方法使用，在生成静态页面的时候，jekyll会把所有这样的变量替换为对应的值。所以上文里要加&lt;code&gt;\&lt;/code&gt;以防止被替换掉。&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 13 Aug 2015 23:01:39 +0800</pubDate>
+        <link>http://mascure.info/jekyll/update/2015/08/13/add-comment-to-my-blog.html</link>
+        <guid isPermaLink="true">http://mascure.info/jekyll/update/2015/08/13/add-comment-to-my-blog.html</guid>
         
         
         <category>jekyll</category>

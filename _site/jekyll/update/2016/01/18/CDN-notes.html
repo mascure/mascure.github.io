@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>静心，多行善事</title>
-  <meta name="description" content="这几天心里颇不宁静。起伏太大。本来就一直躁动不安的我，没想到落得今天如此地步，也是我自作孽，不可活。今天听到mjf的结果，虽然当时不免失落，但现在心里反倒非常宁静了，任何结果我都可以接受了，任何最坏的结果。想想这几个月以来，被绑架的头脑，因为太过年轻，太过偏执，太过自我，是做了多少傻事，最终居然引得老板对我做出最...">
+  <title>CDN</title>
+  <meta name="description" content="看完了《CDN技术详解》这本书，是电信研究院出的，总体上对CDN技术有了一个把握。CDN技术存在的根本原因是web的极大繁荣，对服务提供能力提出的要求。并且在web服务中，存在大量的静态资源。如果web上的资源全部是动态的，也就不会存在CDN了。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/08/25/be-calm.html">
+  <link rel="canonical" href="http://mascure.info/jekyll/update/2016/01/18/CDN-notes.html">
   <link rel="alternate" type="application/rss+xml" title="mascure's blog" href="http://mascure.info/feed.xml" />
 </head>
 
@@ -57,19 +57,22 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">静心，多行善事</h1>
-    <p class="post-meta">Aug 25, 2015</p>
+    <h1 class="post-title">CDN</h1>
+    <p class="post-meta">Jan 18, 2016</p>
   </header>
 
   <article class="post-content">
-    <p>这几天心里颇不宁静。起伏太大。本来就一直躁动不安的我，没想到落得今天如此地步，也是我自作孽，不可活。
-今天听到mjf的结果，虽然当时不免失落，但现在心里反倒非常宁静了，任何结果我都可以接受了，任何最坏的结果。想想这几个月以来，被绑架的头脑，因为太过年轻，太过偏执，太过自我，是做了多少傻事，最终居然引得老板对我做出最决绝的决定。</p>
+    <p>看完了《CDN技术详解》这本书，是电信研究院出的，总体上对CDN技术有了一个把握。CDN技术存在的根本原因是web的极大繁荣，对服务提供能力提出的要求。并且在web服务中，存在大量的静态资源。如果web上的资源全部是动态的，也就不会存在CDN了。</p>
 
-<p>要慢慢让自己平静下来，不管遇到什么事，都要保持冷静，保持一颗平常心。还要多做善事，帮助别人。也许我会慢慢同情那些在地铁里乞讨的人，给他们一点施舍。邻居不在家就帮他收一下快递。</p>
+<p>这些静态资源包括图片，js，CSS等。这些资源所占的字节数较大，如果能把这些资源放在更靠近用户的位置，那么将减少网络传输量和服务器负载。这也就是CDN所要做的事情。</p>
+
+<p>当前CDN主要由网络运营商提供，如联通，电信，移动，以及租用运营商设备的其他公司提供，如蓝迅。</p>
+
+<p>目前CDN的实现主要是嵌套在DNS解析过程中的，其中通过CNAME方式实现是目前业界使用最多的方式。</p>
 
   </article>
   <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/jekyll/update/2015/08/25/be-calm" data-title="静心，多行善事" data-url="http://mascure.info/jekyll/update/2015/08/25/be-calm.html"></div>
+	<div class="ds-thread" data-thread-key="/jekyll/update/2016/01/18/CDN-notes" data-title="CDN" data-url="http://mascure.info/jekyll/update/2016/01/18/CDN-notes.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
