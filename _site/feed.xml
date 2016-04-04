@@ -6,8 +6,8 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 16:05:59 +0800</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 16:05:59 +0800</lastBuildDate>
+    <pubDate>Mon, 04 Apr 2016 16:07:51 +0800</pubDate>
+    <lastBuildDate>Mon, 04 Apr 2016 16:07:51 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -24,11 +24,12 @@
 
 &lt;h3 id=&quot;section-5&quot;&gt;这是三级标题带空格&lt;/h3&gt;
 
-&lt;p&gt;通过上面的测试，可以得到两点结论：
+&lt;p&gt;通过上面的测试，可以得到两点结论：&lt;br /&gt;
 1、jekyll在本地生成的HTML文档推送到github上去之后，并不是mascure.info所访问的文档；&lt;br /&gt;
-2、两个生成器所使用的markdown语法（或者说markdown解析器）并不一致，本地的语法，对于#之后无论有无空格，都可以生成h1标签，github上的语法必须在#之后带空格，才能生成h1标签。&lt;br /&gt;
-这个问题待查。。&lt;br /&gt;
-## 代理模式&lt;/p&gt;
+2、两个生成器所使用的markdown语法（或者说markdown解析器）并不一致，本地的语法，对于#之后无论有无空格，都可以生成h1标签，github上的语法必须在#之后带空格，才能生成h1标签。  &lt;br /&gt;
+这个问题待查。。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;代理模式&lt;/h2&gt;
 
 &lt;p&gt;它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：&lt;br /&gt;
 1、远程代理控制访问远程对象；&lt;br /&gt;
