@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "设计模式-代理模式"
-date:   2016-04-03 20:52:56
+date:   2016-04-03 10:52:56
 categories: jekyll update
 ---
 #代理模式
