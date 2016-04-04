@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>one definition rule</title>
-  <meta name="description" content="昨天碰到一个棘手的问题，编译没有出错，只有几个warning，在运行的时候却挂掉，报段错误。怀疑是空指针问题，但看代码实在不存在空指针的情况。后来不经意改了个变量名，却神奇的可以运行。经过我不懈查找，终于找到原因，这个错误正是前面warning暗示的问题。这个故事再次告诫我们，warning绝对不能不管，要尽一切...">
+  <title>静心，多行善事</title>
+  <meta name="description" content="这几天心里颇不宁静。起伏太大。本来就一直躁动不安的我，没想到落得今天如此地步，也是我自作孽，不可活。今天听到mjf的结果，虽然当时不免失落，但现在心里反倒非常宁静了，任何结果我都可以接受了，任何最坏的结果。想想这几个月以来，被绑架的头脑，因为太过年轻，太过偏执，太过自我，是做了多少傻事，最终居然引得老板对我做出最...">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/07/02/one-difinition-rule.html">
+  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/08/25/be-calm.html">
   <link rel="alternate" type="application/rss+xml" title="mascure's blog" href="http://mascure.info/feed.xml" />
 </head>
 
@@ -55,21 +55,19 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">one definition rule</h1>
-    <p class="post-meta">Jul 2, 2015</p>
+    <h1 class="post-title">静心，多行善事</h1>
+    <p class="post-meta">Aug 25, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>昨天碰到一个棘手的问题，编译没有出错，只有几个warning，在运行的时候却挂掉，报段错误。怀疑是空指针问题，但看代码实在不存在空指针的情况。后来不经意改了个变量名，却神奇的可以运行。经过我不懈查找，终于找到原因，这个错误正是前面warning暗示的问题。这个故事再次告诫我们，warning绝对不能不管，要尽一切可能排除warning。</p>
+    <p>这几天心里颇不宁静。起伏太大。本来就一直躁动不安的我，没想到落得今天如此地步，也是我自作孽，不可活。
+今天听到mjf的结果，虽然当时不免失落，但现在心里反倒非常宁静了，任何结果我都可以接受了，任何最坏的结果。想想这几个月以来，被绑架的头脑，因为太过年轻，太过偏执，太过自我，是做了多少傻事，最终居然引得老板对我做出最决绝的决定。</p>
 
-<p>这个问题我在stackoverflow上进行了<a href="http://stackoverflow.com/questions/31180474/core-dumped-when-a-function-pointer-is-assigned-with-a-funtion-that-has-the-same">提问</a>，才知道是违反了<a href="https://en.wikipedia.org/wiki/One_Definition_Rule">One Definition Rule</a>。可以得到这样的结论，对于同一个对象（只要名字相同就认为是同一个对象），不允许它有两个定义，无论这两个定义是否有相同的类型。如果这两个定义在同一个文件中，那么编译都不能通过，如果跨越文件，编译器不负责检查，这样在运行时的行为就是不确定的，得到段错误也不足为奇。</p>
-
-<p>同时，如果必须要跨越文件使用同一个对象，那么应该以<a href="http://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files-in-c/1433387#1433387">这样</a>的方式使用extern。而如果只是在文件内部使用又想用同一个名字的话，可以给他们加static，这样就保证了这个变量是限定在文件范围内的。</p>
-
+<p>要慢慢让自己平静下来，不管遇到什么事，都要保持冷静，保持一颗平常心。还要多做善事，帮助别人。也许我会慢慢同情那些在地铁里乞讨的人，给他们一点施舍。邻居不在家就帮他收一下快递。</p>
 
   </article>
   <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/jekyll/update/2015/07/02/one-difinition-rule" data-title="one definition rule" data-url="http://mascure.info/jekyll/update/2015/07/02/one-difinition-rule.html"></div>
+	<div class="ds-thread" data-thread-key="/jekyll/update/2015/08/25/be-calm" data-title="静心，多行善事" data-url="http://mascure.info/jekyll/update/2015/08/25/be-calm.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
