@@ -6,13 +6,14 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 14:33:17 +0800</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 14:33:17 +0800</lastBuildDate>
+    <pubDate>Mon, 04 Apr 2016 14:39:38 +0800</pubDate>
+    <lastBuildDate>Mon, 04 Apr 2016 14:39:38 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>设计模式-代理模式</title>
-        <description>&lt;p&gt;它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：&lt;br /&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;代理模式&lt;/h1&gt;
+&lt;p&gt;它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：&lt;br /&gt;
 1、远程代理控制访问远程对象；&lt;br /&gt;
 2、虚拟代理控制访问创建开销大的资源；&lt;br /&gt;
 3、保护代理基于权限控制对资源的访问。&lt;/p&gt;
