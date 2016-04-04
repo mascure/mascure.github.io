@@ -6,13 +6,25 @@
 </description>
     <link>http://mascure.info/</link>
     <atom:link href="http://mascure.info/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 15:05:28 +0800</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 15:05:28 +0800</lastBuildDate>
+    <pubDate>Mon, 04 Apr 2016 15:11:38 +0800</pubDate>
+    <lastBuildDate>Mon, 04 Apr 2016 15:11:38 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>设计模式-代理模式</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;代理模式&lt;/h2&gt;
+        <description>&lt;h1 id=&quot;section&quot;&gt;这是一级标题&lt;/h1&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;这是一级标题带空格&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;这是二级标题&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;这是二级标题带空格&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;这是三级标题&lt;/h3&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;这是三级标题带空格&lt;/h3&gt;
+
+&lt;h2 id=&quot;section-6&quot;&gt;代理模式&lt;/h2&gt;
 
 &lt;p&gt;它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：&lt;br /&gt;
 1、远程代理控制访问远程对象；&lt;br /&gt;
