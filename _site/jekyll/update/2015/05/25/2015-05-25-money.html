@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>设计模式-代理模式</title>
-  <meta name="description" content="这是一级标题">
+  <title>money</title>
+  <meta name="description" content="今天在上班的时候，狠下心把京东购物车里地东西买了3/4，两本蓄谋已久的书，一瓶进口红酒，153.2¥。晚上为了庆祝终于有了冰箱，买了29¥的水果，再加上38¥（牛奶，馒头，红酒杯）。一天又花出去200+。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mascure.info/jekyll/update/2016/04/03/design-patterns.html">
+  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/05/25/2015-05-25-money.html">
   <link rel="alternate" type="application/rss+xml" title="mascure's blog" href="http://mascure.info/feed.xml" />
 </head>
 
@@ -57,54 +57,26 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">设计模式-代理模式</h1>
-    <p class="post-meta">Apr 3, 2016</p>
+    <h1 class="post-title">money</h1>
+    <p class="post-meta">May 25, 2015</p>
   </header>
 
   <article class="post-content">
-    <h1 id="section">这是一级标题</h1>
+    <p>今天在上班的时候，狠下心把京东购物车里地东西买了3/4，两本蓄谋已久的书，一瓶进口红酒，153.2¥。晚上为了庆祝终于有了冰箱，买了29¥的水果，再加上38¥（牛奶，馒头，红酒杯）。一天又花出去200+。</p>
 
-<h1 id="section-1">这是一级标题带空格</h1>
+<p>晚上坐在桌前，想起这些，许久不是滋味。一面是挣的这点工资看起来确实够自己花，让我过的更舒服，自在，比如每天两杯鲜奶，一杯红酒，比如买水果。但另一面是给未来攒钱的巨大压力迫使自己收紧口袋，每次购物都选择最物美价廉的，甚至能用的只要价廉就行。</p>
 
-<h2 id="section-2">这是二级标题</h2>
+<p>那么，应该怎么办呢？既然压力存在，那么就要坦然面对他。压力的根源是Money。Money不够，怎么办？那就尽最大限度的去积累Money。获取的办法无非是两种，增加收入，减小支出。前者占90%，后者10%。所以问题的关键在于第一种。关于支出，只要减少不必要的支出就行，哪些不必要？除了以下这些：基本的一日三餐，运动（游泳），偶尔的买水果，牛奶，社交，交通，学车，必须的日用品。</p>
 
-<h2 id="section-3">这是二级标题带空格</h2>
+<p>下面谈谈第一种。我的收入来源只有一项：工资。（不久之后会有股票收入。。。吗？）。</p>
 
-<h3 id="section-4">这是三级标题</h3>
+<p>前天写着就到睡点了，昨晚又去跑步，拖到了今天%&gt;_&lt;%。</p>
 
-<h3 id="section-5">这是三级标题带空格</h3>
-
-<p>通过上面的测试，可以得到两点结论：
-1、jekyll在本地生成的HTML文档推送到github上去之后，并不是mascure.info所访问的文档；<br />
-2、两个生成器所使用的markdown语法（或者说markdown解析器）并不一致，本地的语法，对于#之后无论有无空格，都可以生成h1标签，github上的语法必须在#之后带空格，才能生成h1标签。<br />
-这个问题待查。。<br />
-## 代理模式</p>
-
-<p>它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：<br />
-1、远程代理控制访问远程对象；<br />
-2、虚拟代理控制访问创建开销大的资源；<br />
-3、保护代理基于权限控制对资源的访问。</p>
-
-<p>实现远程代理，最原始的方法是使用jdk内置的RMI工具，可以在一个JVM中调用另一个JVM中的对象的方法。</p>
-
-<p>远程代理是从设计模式的角度描述这个过程，但它更广为人知的名称叫做<远程过程调用>（RPC）。RPC简单来说就是解决这样一件事情，在机器A上想调用某个服务（对象）的某个方法，但这个服务本身是在机器B上（或者机器A的另外一个进程里），所以A对该服务的调用，需要转发到B的对应服务上，转发通常是：序列化-网络传输-反序列化，B调用完之后，将结果以同样的通道传给A，从而完成一次调用。</远程过程调用></p>
-
-<p>特地看了一下点评的pigeon，它的体系结构如下：</p>
-
-<p><img src="/images/pigeon.png" alt="pigeon" /></p>
-
-<p>可以看到一次调用经过了类似网络7层结构栈的从最顶层到最底层，再从最底层到最顶层的路径。pigeon做了代理的创建，路由，线程管理等，在网络通信层使用了netty。netty是一个高性能，异步事件驱动的NIO框架，由于性能高，获得广泛应用。参见<a href="http://www.infoq.com/cn/articles/netty-high-performance/">Netty系列之Netty高性能之道</a>。</p>
-
-<p>而RMI的所有调用均是同步阻塞式的。</p>
-
-<p>相比RMI，pigeon做到了高性能和简单易用。</p>
-
-<p>有必要研究一下netty。</p>
-
+<p>如何提升工资？提升个人能力，重视人际关系处理，前者决定我有没有可能提高工资，后者决定会不会提高工资。对于第一点，不在于我有多拼，而在于在既定的时间内我又没有实实在在的进步。决不能自己忙忙碌碌，但实际上像无头苍蝇一样毫无斩获。宁可放慢脚步，也要思考清楚再行动，一定要把自己用出去的时间用在刀刃上。对于人际关系，我认为做好两点，尊重他人，多说赞美的话。毕竟程序员大多是崇尚简单，务实，没有那么多勾心斗角。</p>
 
   </article>
   <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/jekyll/update/2016/04/03/design-patterns" data-title="设计模式-代理模式" data-url="http://mascure.info/jekyll/update/2016/04/03/design-patterns.html"></div>
+	<div class="ds-thread" data-thread-key="/jekyll/update/2015/05/25/2015-05-25-money" data-title="money" data-url="http://mascure.info/jekyll/update/2015/05/25/2015-05-25-money.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

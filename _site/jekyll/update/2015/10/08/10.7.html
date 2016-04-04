@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>设计模式-代理模式</title>
-  <meta name="description" content="这是一级标题">
+  <title>10.7</title>
+  <meta name="description" content="国庆回来了。">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://mascure.info/jekyll/update/2016/04/03/design-patterns.html">
+  <link rel="canonical" href="http://mascure.info/jekyll/update/2015/10/08/10.7.html">
   <link rel="alternate" type="application/rss+xml" title="mascure's blog" href="http://mascure.info/feed.xml" />
 </head>
 
@@ -57,54 +57,24 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">设计模式-代理模式</h1>
-    <p class="post-meta">Apr 3, 2016</p>
+    <h1 class="post-title">10.7</h1>
+    <p class="post-meta">Oct 8, 2015</p>
   </header>
 
   <article class="post-content">
-    <h1 id="section">这是一级标题</h1>
+    <p>国庆回来了。</p>
 
-<h1 id="section-1">这是一级标题带空格</h1>
+<p>本想着最近遭遇了大的变故，回家去父母那里，让他们抚慰一下我受伤的心灵。可是结果不如我意。</p>
 
-<h2 id="section-2">这是二级标题</h2>
+<p>放假前去见了一下梦雯。我试图用一种简单的方式去描述我最近的遭遇，没有刻意去强调什么。可是她真的就这么轻描淡写的对我的遭遇带过了。我是有点失望的。连梦雯这样的好友都没有察觉到我心灵上遭遇的巨大创伤。也许是她没有亲身体会过被别人笑里藏刀地在后背狠狠的插一刀是什么样的感受，没有体会过还没来得及积攒经验就要面临重新找工作的境遇。</p>
 
-<h2 id="section-3">这是二级标题带空格</h2>
+<p>父母久居家中，对外面的世界，尤其是跟我工作相关的，互联网，软件知之甚少。他们不知道我的真实工作环境是什么样的。即使他们懂得人情冷暖，世态炎凉，但畏于自身的知识有限，他们以为自己不知道我遭遇的每一个细节，因而就不做深入体察，仅凭我的说辞罢了。也许这是事实。但连父母也不能去心疼一下自己孩子的痛苦，我是有点失望的。</p>
 
-<h3 id="section-4">这是三级标题</h3>
-
-<h3 id="section-5">这是三级标题带空格</h3>
-
-<p>通过上面的测试，可以得到两点结论：
-1、jekyll在本地生成的HTML文档推送到github上去之后，并不是mascure.info所访问的文档；<br />
-2、两个生成器所使用的markdown语法（或者说markdown解析器）并不一致，本地的语法，对于#之后无论有无空格，都可以生成h1标签，github上的语法必须在#之后带空格，才能生成h1标签。<br />
-这个问题待查。。<br />
-## 代理模式</p>
-
-<p>它的定义是这么说的：代理模式为另一个对象提供替身或占位符以控制对这个对象的访问。既然不是“直接”控制对象，而是通过增加一层包装，那么这层包装有什么用处呢？主要有以下三种：<br />
-1、远程代理控制访问远程对象；<br />
-2、虚拟代理控制访问创建开销大的资源；<br />
-3、保护代理基于权限控制对资源的访问。</p>
-
-<p>实现远程代理，最原始的方法是使用jdk内置的RMI工具，可以在一个JVM中调用另一个JVM中的对象的方法。</p>
-
-<p>远程代理是从设计模式的角度描述这个过程，但它更广为人知的名称叫做<远程过程调用>（RPC）。RPC简单来说就是解决这样一件事情，在机器A上想调用某个服务（对象）的某个方法，但这个服务本身是在机器B上（或者机器A的另外一个进程里），所以A对该服务的调用，需要转发到B的对应服务上，转发通常是：序列化-网络传输-反序列化，B调用完之后，将结果以同样的通道传给A，从而完成一次调用。</远程过程调用></p>
-
-<p>特地看了一下点评的pigeon，它的体系结构如下：</p>
-
-<p><img src="/images/pigeon.png" alt="pigeon" /></p>
-
-<p>可以看到一次调用经过了类似网络7层结构栈的从最顶层到最底层，再从最底层到最顶层的路径。pigeon做了代理的创建，路由，线程管理等，在网络通信层使用了netty。netty是一个高性能，异步事件驱动的NIO框架，由于性能高，获得广泛应用。参见<a href="http://www.infoq.com/cn/articles/netty-high-performance/">Netty系列之Netty高性能之道</a>。</p>
-
-<p>而RMI的所有调用均是同步阻塞式的。</p>
-
-<p>相比RMI，pigeon做到了高性能和简单易用。</p>
-
-<p>有必要研究一下netty。</p>
-
+<p>前路还是要继续走的，还是少向后看吧。</p>
 
   </article>
   <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/jekyll/update/2016/04/03/design-patterns" data-title="设计模式-代理模式" data-url="http://mascure.info/jekyll/update/2016/04/03/design-patterns.html"></div>
+	<div class="ds-thread" data-thread-key="/jekyll/update/2015/10/08/10.7" data-title="10.7" data-url="http://mascure.info/jekyll/update/2015/10/08/10.7.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
