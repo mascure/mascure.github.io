@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "霸王餐"
-date:   2016-05-08 16:14:37
+date:   2016-05-08 16:14:37 +0800
 categories: jekyll update
 ---
 点评的霸王餐是个好东西，一个一个点又比较麻烦，于是需要写一个一键报名所有霸王餐的工具，还有休闲娱乐的，比如健身类的。
@@ -21,4 +21,9 @@ sudo pip install pyinstaller
 pyinstaller -F source.py
 #run your binary
 ./dist/source
-{% endhighlight bash%}
+{% endhighlight %}
+
+git地址:[https://github.com/mascure/bawangcan][link]
+
+[link]: https://github.com/mascure/bawangcan
+
