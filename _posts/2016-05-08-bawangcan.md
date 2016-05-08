@@ -22,5 +22,3 @@ pyinstaller -F source.py
 #run your binary
 ./dist/source
 {% endhighlight bash%}
-
-
