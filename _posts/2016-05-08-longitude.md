@@ -3,6 +3,7 @@ layout: post
 title:  "经度"
 date:   2016-05-08 18:07:17 +0800
 categories: jekyll update
+description: longititude
 ---
 上周末口腔溃疡了，医生说要好好休息，于是远离电子产品，读完了仰慕已久的哈里森航海钟的故事-《经度》。
 
@@ -14,10 +15,10 @@ categories: jekyll update
 最后上几张图片，向伟人致敬。
 
 哈里森  
-![harrison](/images/harrison.jpg)
+![harrison](/assets/images/harrison.jpg)
 
 h1  
-![h1](/images/H1.jpg "H1")
+![h1](/assets/images/H1.jpg "H1")
 
 h1的蚱蜢擒纵器  
-![h1](/images/h1.gif)
+![h1](/assets/images/h1.gif)

@@ -13,15 +13,15 @@ categories: jekyll update
 根据stackoverflow上的[这个解释]，阻塞和同步可以理解为同一个事物，即进程调用一个API，进程本身被挂起直到内核返回结果。而非阻塞和异步则不同，非阻塞意味着如果结果不能立即返回，那么API立即返回一个错误并且什么也不做，因此需要进程有某种查询的方法来看API是否可以被调用。而异步意味着API总是立即返回，并在“后台”开始准备结果，准备完成后通知进程。  
 
 所以一个阻塞式的IO是这样的：
-![blocking IO](/images/blocking_IO.gif)  
+![blocking IO](/assets/images/blocking_IO.gif)  
 
 一个同步非阻塞式的IO是这样的：
-![non-blocking IO](/images/non_blocking_IO.gif)  
+![non-blocking IO](/assets/images/non_blocking_IO.gif)  
 
 非阻塞比阻塞优势在于，进程不必等待数据准备好，并且可以过一段时间查询一次，而这段时间可以用来做别的事，提高了效率。
 
 一个异步非阻塞式的IO是这样的： 
-![asynchronous_non-blocking IO](/images/asynchronous_non_blocking_IO.gif)  
+![asynchronous_non-blocking IO](/assets/images/asynchronous_non_blocking_IO.gif)  
 
 可以看到，进程读调用结束后立即返回，内核将会等待数据准备好，然后将数据拷贝到进程空间，再发信号给进程，进程处理函数将会处理结果。这种方式比同步非阻塞的方式优势在于，不必反复查询数据是否准备好，也不用等待数据从内核拷贝到进程。
 

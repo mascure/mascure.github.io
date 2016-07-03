@@ -87,7 +87,7 @@ error, -1 is returned, and errno is set appropriately.
 int socket(int domain, int type, int protocol);
 {% endhighlight %}
 一个基本的TCP客户/服务器通信的流程如下：
-![TCP_client_server](/images/tcp_client_server.png)
+![TCP_client_server](/assets/images/tcp_client_server.png)
 
 根据上图，一个使用socket的典型的客户端服务器程序如下（功能：获取服务器时间）：
 {% highlight c %}

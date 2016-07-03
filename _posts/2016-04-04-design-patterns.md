@@ -35,7 +35,7 @@ categories: jekyll update
 
 特地看了一下点评的pigeon，它的体系结构如下：
 
-![pigeon](/images/pigeon.png)
+![pigeon](/assets/images/pigeon.png)
 
 可以看到一次调用经过了类似网络7层结构栈的从最顶层到最底层，再从最底层到最顶层的路径。pigeon做了代理的创建，路由，线程管理等，在网络通信层使用了netty。netty是一个高性能，异步事件驱动的NIO框架，由于性能高，获得广泛应用。参见[Netty系列之Netty高性能之道]。
 
