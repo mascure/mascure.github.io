@@ -6,7 +6,7 @@ draft: false
 ---
 #### Who am I?
 mascure 河南安阳人
-
+<!--
 2012年毕业于东北师范大学软件工程专业
 
 2015年毕业于浙江大学计算机专业
@@ -18,3 +18,4 @@ mascure 河南安阳人
 博客内容以技术分享为主，兼具读书，思（wu）考（bing）人（shen）生（yin）
 
 联系方式：linzhouwzj at 163.com
+-->
