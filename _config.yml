@@ -6,7 +6,8 @@ author_github: mascure
 description: |
   What a lovely world!
 baseurl: ""
-url: http://mascure.info
+url: https://mascure.info
+enforce_ssl: mascure.info
 paginate: 12
 github:
   user: 
