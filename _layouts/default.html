@@ -2,6 +2,11 @@
 <html lang="pt-br">
 
     <head>
+    <script type="text/javascript">
+    var host = "mascure.info";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
         <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -14,6 +19,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta http-equiv="Content-Language" content="pt-br">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+
     </head>
   <body>
     {% include analytics.html %}
